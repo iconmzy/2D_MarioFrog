@@ -223,7 +223,7 @@ public class CharacterMovement : MonoBehaviour
         {
             rbSprite.flipX = true;
         }
-        // dirX接近0时保持当前方向不变
+        
     }
 
 }
