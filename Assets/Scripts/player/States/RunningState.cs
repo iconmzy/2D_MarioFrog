@@ -22,7 +22,23 @@ namespace Game.FSM.Player
 
         public override void Tick()
         {
-
+            // 状态转换检测
+            if (!player.IsGrounded)
+            {
+                // 离地状态判断
+                if (player.IsRising)
+                {
+                    player.SwitchToJumping();
+                }
+                else if (player.IsFalling)
+                {
+                    player.SwitchToFalling();
+                }
+            }
+            else if (player.ShouldIdle)
+            {
+                player.SwitchToIdle();
+            }
         }
     }
 }
